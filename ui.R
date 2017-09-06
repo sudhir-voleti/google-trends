@@ -18,7 +18,7 @@ shinyUI(pageWithSidebar(
     textInput("topic3", ("Enter Seacrh Key Word 2"), value = "Brazil"),
     textInput("topic4", ("Enter Seacrh Key Word 4"), value = "China"),
     selectInput("geo", "Country", 
-                c("All" = "all",
+                c("All" = "",
                   'Andorra'='AD',
                   'United Arab Emirates'='AE',
                   'Afghanistan'='AF',
@@ -267,8 +267,9 @@ shinyUI(pageWithSidebar(
                           'Mayotte'='YT',
                           'South Africa'='ZA',
                           'Zambia'='ZM',
-                          'Zimbabwe'='ZW'), 
-                selected = "All"), # weightTf, weightTfIdf, weightBin, and weightSMART.
+                          'Zimbabwe'='ZW')
+                # selected = ""
+                ), # weightTf, weightTfIdf, weightBin, and weightSMART.
     dateRangeInput("dates", label = h3("Date range"),
                    start  = "2017-02-01",
                    end    = "2017-08-31")
