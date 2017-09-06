@@ -4,7 +4,7 @@ try(require("reshape2")||install.packages("reshape2"))
 
 try(require("devtools")||install.packages("devtools"))
 library("devtools")
-try(require(install_github("PMassicotte/gtrendsR")))
+try(require("gtrendsR")||install_github("PMassicotte/gtrendsR"))
 
 library("shiny")
 library("gtrendsR")
