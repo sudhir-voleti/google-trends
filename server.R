@@ -6,7 +6,7 @@ shinyServer(function(input, output,session) {
 
   query = reactive({
     Sys.setenv(TZ = "UTC")
-    q = unique(c(input$topic1,input$topic2,input$topic3,input$topic4))
+    q = setdiff(unique(c(input$topic1,input$topic2,input$topic3,input$topic4)),"")
     google.trends = gtrends(q, geo=input$geo ,
                             gprop = "web", time = paste0(input$dates[1]," ",input$dates[2]))[[1]]
     google.trends = dcast(google.trends, date ~ keyword + geo, value.var = "hits")
