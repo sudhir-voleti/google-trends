@@ -13,8 +13,20 @@ shinyServer(function(input, output,session) {
     google.trends
     # geo = c(input$geo)
   })
+  
+  output$plot = renderPlot({
+    
+    Google_Trends <- xts(query()[,-1], order.by=as.Date(query()[,1], "%Y-%m-%d"))
+    
+    plot(Google_Trends, auto.legend = TRUE,screens = factor(1, 1), title(main = "Intrest Over Time"))
+    
+
+  })
+  
   output$out = renderPrint({
-    query()  
+    
+    query()
+    
   })
 
   output$downloadData <- downloadHandler(

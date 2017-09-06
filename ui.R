@@ -4,6 +4,8 @@
 library("shiny")
 library(gtrendsR)
 library(reshape2)
+library(xts)
+library(xtsExtra)
 
 #library("foreign")
 
@@ -13,10 +15,10 @@ shinyUI(pageWithSidebar(
   # Input in sidepanel:
   sidebarPanel(
     
-    textInput("topic1", ("Enter Seacrh Key Word 1"), value = "India"),
-    textInput("topic2", ("Enter Seacrh Key Word 2"), value = "USA"),
-    textInput("topic3", ("Enter Seacrh Key Word 2"), value = "Brazil"),
-    textInput("topic4", ("Enter Seacrh Key Word 4"), value = "China"),
+    textInput("topic1", ("Enter Seacrh Key Word 1"), value = "Jayalalithaa"),
+    textInput("topic2", ("Enter Seacrh Key Word 2"), value = "Arvind Kejriwal"),
+    textInput("topic3", ("Enter Seacrh Key Word 2"), value = "Narendra Modi"),
+    textInput("topic4", ("Enter Seacrh Key Word 4"), value = "Rahul Gandhi"),
     selectInput("geo", "Country", 
                 c("All" = "",
                   'Andorra'='AD',
@@ -271,8 +273,9 @@ shinyUI(pageWithSidebar(
                 # selected = ""
                 ), # weightTf, weightTfIdf, weightBin, and weightSMART.
     dateRangeInput("dates", label = h3("Date range"),
-                   start  = "2017-02-01",
-                   end    = "2017-08-31")
+                   start  = "2012-01-01",
+                   end    = "2017-08-31"),
+    submitButton(text = "Apply Changes", icon("refresh"))
     
   ),
   # Main:
@@ -282,6 +285,7 @@ shinyUI(pageWithSidebar(
                 #
                 tabPanel("Overview",br(),h4("How to use this app"),br(),
                          p('TBD'),
+                         plotOutput('plot'),
                          verbatimTextOutput('out')
                          
                     )
