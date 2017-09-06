@@ -280,7 +280,7 @@ shinyUI(pageWithSidebar(
     tabsetPanel(type = "tabs",
                 #
                 tabPanel("Overview",br(),h4("How to use this app"),br(),
-                         p('To use this app, simply upload the image file in the left side bar panel. Once image file is uploaded, text from the image will show in "Image to Text" tab. One Sample image file is shown below.'),
+                         p('TBD'),
                          verbatimTextOutput('out')
                          
                     )
