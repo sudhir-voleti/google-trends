@@ -11,7 +11,8 @@ library(xtsExtra)
 
 shinyUI(pageWithSidebar(
   # Header:
-  headerPanel("Google Trends"),
+  #headerPanel("Google Trends"),
+  titlePanel(title=div(img(src="logo.png",align='right'),"Google Trends")),
   # Input in sidepanel:
   sidebarPanel(
     
