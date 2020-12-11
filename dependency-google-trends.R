@@ -6,7 +6,7 @@ try(require("xts")||install.packages("xts"))
 try(require("devtools")||install.packages("devtools"))
 library("devtools")
 try(require("gtrendsR")||install_github("PMassicotte/gtrendsR"))
-try(require("xtsExtra")||install_github("PMassicotte/xtsExtra"))
+try(require("xtsExtra")||install_github("R-Finance/xtsExtra"))
 
 
 library("shiny")
